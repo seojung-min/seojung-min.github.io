@@ -31,7 +31,7 @@ I am a Ph.D. candidate in Mechanical Engineering at KAIST, advised by [Prof. Jun
 My research focuses on tactile sensing, tool-mediated interaction dynamics, and extrinsic contact inference for robotic manipulation.
 I study how robots can interpret physical interaction signals—such as shear, sliding, stick–slip, geometric constraints, and environment-tool contact—to achieve precise control and robust behaviors in real-world tasks.
 
-My recent work explores vision-based tactile sensors, marker-based deformation tracking, and contact-induced motion estimation, aiming to enable robots to understand and reconstruct tool–environment interactions in real time. I am also interested in tactile representation learning and scalable methods that bridge perception and control.
+My recent work explores vision-based tactile sensors, contact-induced motion estimation, aiming to enable robots to understand and reconstruct tool–environment interactions in real time. I am also interested in tactile representation learning and scalable methods that bridge perception and control.
 
 Starting March 2026, I will be based in Boston for one year to pursue collaborative research and further expand my work in tactile robotics and manipulation.
 
