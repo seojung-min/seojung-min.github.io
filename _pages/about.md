@@ -9,7 +9,7 @@ profile:
   image: profile.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>#2215, N7,</p>~~~~
+    <p>#2215, N7,</p>
     <p>Daehak-ro 291, Yuseong-gu,</p>
     <p>Daejeon, South Korea</p>
 
