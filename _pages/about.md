@@ -9,11 +9,11 @@ profile:
   image: profile.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>#2215, N7,</p>
+    <p>#2215, N7,</p>~~~~
     <p>Daehak-ro 291, Yuseong-gu,</p>
     <p>Daejeon, South Korea</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
