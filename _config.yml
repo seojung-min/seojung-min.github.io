@@ -175,6 +175,11 @@ include: ["_pages", "_scripts"]
 exclude:
   - _pages/blog.md
   - _posts/
+  - _pages/repositories.md
+  - _pages/cv.md
+  - _pages/teaching.md
+  - _pages/dropdown.md
+  - _pages/profiles.md
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
