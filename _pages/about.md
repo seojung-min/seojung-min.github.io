@@ -35,4 +35,4 @@ My recent work explores vision-based tactile sensors, contact-induced motion est
 
 Starting March 2026, I will be based in Boston for one year to pursue collaborative research and further expand my work in tactile robotics and manipulation.
 
-You can find my full CV [here](/al-folio/assets/pdf/SMIN_CV.pdf).
+You can find my full CV [here](/assets/pdf/SMIN_CV.pdf).
