@@ -55,14 +55,14 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-online-tactile-based-extrinsic-contact-tracking",
           title: 'Online Tactile-Based Extrinsic Contact Tracking',
-          description: "Online tool-tip trajectory estimation during sliding using dual GelSight tactile sensors",
+          description: "Online tool-tip trajectory estimation using dual GelSight tactile sensors",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+            },},{id: "projects-tactile-force-estimation-with-gelsight-mini",
+          title: 'Tactile Force Estimation with GelSight Mini',
+          description: "Building a force estimator for future extrinsic contact reasoning",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/sample_project/";
+              window.location.href = "/projects/2_project/";
             },},{
         id: 'social-email',
         title: 'email',
@@ -83,13 +83,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=yBy8Pu8AAAAJ", "_blank");
-        },
-      },{
-        id: 'social-youtube',
-        title: 'YouTube',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://youtube.com/@", "_blank");
         },
       },{
       id: 'light-theme',
