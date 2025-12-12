@@ -5,7 +5,9 @@ permalink: /projects/
 description: 
 nav: true
 nav_order: 2
-display_categories: [work, fun]
+display_categories:
+  - tactile
+  - hri
 horizontal: false
 ---
 
@@ -15,7 +17,14 @@ horizontal: false
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
   <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
+    {% assign category_title = category %}
+    {% if category == "tactile" %}
+      {% assign category_title = "Robotic Tactile Perception" %}
+    {% elsif category == "hri" %}
+      {% assign category_title = "Haptic Interface" %}
+    {% endif %}
+    
+    <h2 class="category">{{ category_title }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
