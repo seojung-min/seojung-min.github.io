@@ -57,12 +57,27 @@ ninja.data = [{
           title: 'Online Tactile-Based Extrinsic Contact Tracking',
           description: "Online tool-tip trajectory estimation using dual GelSight tactile sensors",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
+              window.location.href = "/projects/dynamic_extrinsic/";
             },},{id: "projects-tactile-force-estimation-with-gelsight-mini",
           title: 'Tactile Force Estimation with GelSight Mini',
           description: "Building a force estimator for future extrinsic contact reasoning",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
+              window.location.href = "/projects/gelsight/";
+            },},{id: "projects-enhancing-ar-interaction-with-vibrotactile-feedback-hololens2",
+          title: 'Enhancing AR Interaction with Vibrotactile Feedback (HoloLens2)',
+          description: "Exploring how fingertip haptics improve immersion and task performance in AR",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/hololens/";
+            },},{id: "projects-wearable-vibrotactile-haptic-feedback-system",
+          title: 'Wearable Vibrotactile Haptic Feedback System',
+          description: "Hardware prototyping + human experiment design for proprioception-inspired haptic feedback",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/proprioception/";
+            },},{id: "projects-tactile-roughness-estimation-with-the-digit-sensor",
+          title: 'Tactile Roughness Estimation with the DIGIT Sensor',
+          description: "A feasibility study on ordinal tactile representation learning",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/roughness/";
             },},{
         id: 'social-email',
         title: 'email',
