@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Ph.D. candidate in Mechanical Engineering at KAIST, advised by [Prof. Jung Kim](https://scholar.google.com/citations?user=Xdnc5IMAAAAJ&hl=en&oi=ao), in [BioRobotics Lab.](http://biorobotics.kaist.ac.kr).
+I am a Ph.D. student in Mechanical Engineering at KAIST, advised by [Prof. Jung Kim](https://scholar.google.com/citations?user=Xdnc5IMAAAAJ&hl=en&oi=ao), in [BioRobotics Lab.](http://biorobotics.kaist.ac.kr).
 My research focuses on tactile sensing, tool-mediated interaction dynamics, and extrinsic contact inference for robotic manipulation.
 I study how robots can interpret physical interaction signals—such as shear, sliding, stick–slip, geometric constraints, and environment-tool contact—to achieve precise control and robust behaviors in real-world tasks.
 
