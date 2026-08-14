@@ -1,142 +1,150 @@
 ---
 layout: page
-title: Tactile Roughness Estimation with the DIGIT Sensor
-description: A feasibility study on ordinal tactile representation learning
-img: assets/projects/1_tactile/2025_roughness/kinova.png
+title: Robust Tactile Roughness Perception
+description: Learning and adaptation under sensor and interaction variability
+img: assets/projects/1_tactile/2025_roughness/THUMBNAIL.png
 importance: 2
 category: tactile
+related_publications: false
 ---
 
-## 🧭 Project Overview
+Vision-based tactile signals can change substantially across sensors, gel pads, and exploration conditions.  
+This project studies **how tactile roughness perception can remain reliable when the sensing conditions change**.
 
-This project explores **tactile roughness estimation** using  
-high-resolution **vision-based tactile images from the DIGIT sensor**.
-
-Rather than treating roughness as a precise scalar value,
-this work investigates **ordinal formulations**  
-(e.g., *“A is rougher than B”*) as a more robust learning signal
-under **limited data and sensor variation**.
-
-At the current stage, this project focuses on a **controlled feasibility study**
-using **sandpaper samples** to understand how different learning paradigms behave
-before extending to textiles and human perceptual labels.
+<div class="alert alert-light border mt-3 mb-4">
+  <strong>Core question:</strong>
+  When absolute tactile measurements are unstable, what information remains reliable enough to learn and transfer?
+</div>
 
 ---
 
-## 🎯 Motivation
+## Study 1: Ranking under Domain Shift
 
-Estimating tactile roughness is not merely a regression problem.
+<div class="row align-items-center">
+  <div class="col-md-7 mt-3">
+    {% include figure.liquid
+       path="assets/projects/1_tactile/2025_roughness/FIGURE_RANKING_CONCEPT.png"
+       title="Ranking-based tactile roughness perception under domain shift"
+       class="img-fluid rounded z-depth-1"
+    %}
+  </div>
 
-In real-world tactile perception:
+  <div class="col-md-5 mt-3">
+    <h4>Relative ordering is more stable than absolute scale.</h4>
 
-- labels are ambiguous,
-- sensor conditions vary (gel wear, lighting, unit differences),
-- and human judgments are fundamentally **ordinal**.
+    <p>
+      We compared <strong>classification, regression, and pairwise ranking</strong>
+      using five sandpaper grit levels. All three formulations performed similarly
+      under well-conditioned in-domain data, but their behavior diverged when
+      training data became scarce or sensing conditions changed.
+    </p>
 
-This project asks a simple question:
+    <p>
+      Ranking directly optimizes ordinal relationships rather than absolute numerical
+      targets, making it less sensitive to shifts in the tactile response scale.
+    </p>
+  </div>
+</div>
 
-> **Is ranking-based learning more stable than regression or classification
-> for tactile material perception?**
+<div class="row mt-4 text-center">
+  <div class="col-md-4">
+    <h3>9,595</h3>
+    <p>in-domain tactile samples</p>
+  </div>
 
----
+  <div class="col-md-4">
+    <h3>5</h3>
+    <p>ordered roughness levels</p>
+  </div>
 
-## 🛠 Hardware & Data Collection Setup
+  <div class="col-md-4">
+    <h3>+0.290</h3>
+    <p>Spearman correlation over regression under OOD shift</p>
+  </div>
+</div>
 
-### Automated Indentation with Kinova + DIGIT
-
-<div class="row">
-    <div class="col-sm mt-3">
-        <video controls class="img-fluid rounded z-depth-1">
-          <source src="/assets/projects/1_tactile/2025_roughness/kinova.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="col-sm mt-3">
-        <div style="width:40%;">
-            {% include figure.liquid
-               path="assets/projects/1_tactile/2025_roughness/closeup.png"
-               title="Close-up view of DIGIT sensor and sandpaper contact"
-               class="img-fluid rounded z-depth-1"
-            %}
-        </div>
-    </div>
-
+<div class="row justify-content-sm-center mt-3">
+  <div class="col-sm-12">
+    {% include figure.liquid
+       path="assets/projects/1_tactile/2025_roughness/FIGURE_RANKING_RESULTS.png"
+       title="Out-of-distribution comparison of classification, regression, and ranking"
+       class="img-fluid rounded z-depth-1"
+    %}
+  </div>
 </div>
 
 <div class="caption">
-Kinova Gen3 performs repeatable vertical indentations while streaming DIGIT tactile images.
+  Ranking-based learning preserves ordinal consistency more effectively under sensor and exploration shift, particularly when training supervision is limited.
 </div>
 
 ---
 
-## 🧪 Materials & Dataset (Current)
+## Study 2: Real-Time Deployment & Hardware Adaptation
 
-**Sensors**
-- DIGIT tactile sensors (multiple units)
-- Different gel conditions (new / worn)
+<div class="row align-items-center">
+  <div class="col-md-7 mt-3">
+    {% include figure.liquid
+       path="assets/projects/1_tactile/2025_roughness/FIGURE_ADAPTATION.png"
+       title="Real-time performance and few-shot hardware adaptation"
+       class="img-fluid rounded z-depth-1"
+    %}
+  </div>
 
-**Materials**
-- 5 sandpaper classes  
-  *(grit: 100, 180, 240, 320, 400)*
+  <div class="col-md-5 mt-3">
+    <h4>Offline accuracy does not guarantee deployed performance.</h4>
 
-**Data**
-- ~2,000 tactile images per class
-- Robot-collected + small hand-collected mix
-- Uncontrolled gel wear and illumination variation
+    <p>
+      A follow-on study examined what happens when a tactile classifier is moved
+      from an offline test set to <strong>live robotic contact</strong>, and then to
+      a previously unseen DIGIT sensor and gel configuration.
+    </p>
 
----
-
-## 📊 Learning Paradigms Evaluated
-
-We evaluated three common formulations:
-
-- **Classification** (Cross-Entropy loss)
-- **Scalar Regression** (MSE loss)
-- **Pairwise Ranking** (RankNet-style loss)
-
-Each paradigm was tested under:
-
-- **Data regimes:** full / medium / low
-- **Evaluation settings:**
-  - in-domain (same sensor)
-  - cross-sensor transfer (different DIGIT units & gels)
-
----
-
-## 🧠 Key Observations (Feasibility Findings)
-
-- **Roughness is fundamentally ordinal**
-  - Ordering between sandpapers is preserved even under sensor variation.
-
-- **Ranking is label-efficient**
-  - Stable ordering emerges even with very limited data.
-
-- **Regression is fragile**
-  - Performance degrades sharply under domain shift.
-
-- **Classification is misleading**
-  - High accuracy does not imply correct ordering or perceptual structure.
-
-These trends suggest that **ranking-based supervision may be better aligned**
-with tactile material perception than absolute labels.
-
----
-
-## 🚀 Next Steps
-
-This project is ongoing. Planned extensions include:
-
-- Textile samples with richer geometry and compliance
-- Human perceptual ranking experiments
-- Larger-scale pairwise datasets
-- Comparison of ranking formulations:
-  - RankNet
-  - Bradley–Terry
-  - Thurstone
-- Systematic cross-sensor generalization analysis
-
----
-
-<div class="alert alert-info">
-<strong>Status:</strong> Ongoing feasibility study.<br>
-This page will be updated as textile data and perceptual experiments are added.
+    <p>
+      The performance drop was substantial, but most of the hardware-induced gap
+      could be recovered using only a small amount of target-domain data.
+    </p>
+  </div>
 </div>
+
+<div class="row mt-4 text-center">
+  <div class="col-md-3">
+    <h3>96.76%</h3>
+    <p>offline test</p>
+  </div>
+
+  <div class="col-md-3">
+    <h3>82.96%</h3>
+    <p>real-time, known hardware</p>
+  </div>
+
+  <div class="col-md-3">
+    <h3>72.22%</h3>
+    <p>real-time, unseen hardware</p>
+  </div>
+
+  <div class="col-md-3">
+    <h3>88.15%</h3>
+    <p>after few-shot adaptation</p>
+  </div>
+</div>
+
+<div class="alert alert-light border mt-3">
+  <strong>Few-shot result:</strong>
+  14 images per class recovered most of the hardware-induced performance gap,
+  and 28 images per class matched the real-time performance obtained on hardware
+  seen during training.
+</div>
+
+---
+
+## Publications
+
+**Seojung Min**, Juhee Park, Gunhee Park, and Jung Kim  
+“Ranking-Based Learning for Robust Tactile Roughness Perception under Domain Shift”  
+*2026 23rd International Conference on Ubiquitous Robots (UR), IEEE.*
+
+<br>
+
+Juhee Park, **Seojung Min**, and Jung Kim  
+“Real-Time Evaluation and Few-Shot Hardware Adaptation of a Vision-Based Tactile Sensor”  
+*2026 26th International Conference on Control, Automation and Systems (ICCAS).*
