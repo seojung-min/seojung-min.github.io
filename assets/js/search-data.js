@@ -65,29 +65,29 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-real-time-evaluation-and-few-shot-hardware-adaptation-of-a-vision-based-tactile-sensor-was-accepted-to-iccas-2026",
           title: 'Our paper, “Real-Time Evaluation and Few-Shot Hardware Adaptation of a Vision-Based Tactile Sensor,”...',
           description: "",
-          section: "News",},{id: "projects-online-tactile-based-extrinsic-contact-tracking",
-          title: 'Online Tactile-Based Extrinsic Contact Tracking',
-          description: "Online tool-tip trajectory estimation using dual GelSight tactile sensors",
+          section: "News",},{id: "projects-extrinsic-contact-reconstruction",
+          title: 'Extrinsic Contact Reconstruction',
+          description: "Reconstructing remote tool-tip contact trajectories from grasp-level tactile sensing",
           section: "Projects",handler: () => {
               window.location.href = "/projects/dynamic_extrinsic/";
-            },},{id: "projects-tactile-force-estimation-with-gelsight-mini",
-          title: 'Tactile Force Estimation with GelSight Mini',
-          description: "Building a force estimator for future extrinsic contact reasoning",
+            },},{id: "projects-tactile-force-torque-calibration",
+          title: 'Tactile Force–Torque Calibration',
+          description: "Building a multi-contact GelSight–Nano17 dataset for force and torque estimation",
           section: "Projects",handler: () => {
               window.location.href = "/projects/gelsight/";
-            },},{id: "projects-enhancing-ar-interaction-with-vibrotactile-feedback-hololens2",
-          title: 'Enhancing AR Interaction with Vibrotactile Feedback (HoloLens2)',
-          description: "Exploring how fingertip haptics improve immersion and task performance in AR",
+            },},{id: "projects-ar-haptic-feedback",
+          title: 'AR Haptic Feedback',
+          description: "Fingertip vibrotactile feedback for hand interaction in augmented reality",
           section: "Projects",handler: () => {
               window.location.href = "/projects/hololens/";
-            },},{id: "projects-wearable-vibrotactile-haptic-feedback-system",
-          title: 'Wearable Vibrotactile Haptic Feedback System',
-          description: "Hardware prototyping + human experiment design for proprioception-inspired haptic feedback",
+            },},{id: "projects-wearable-vibrotactile-system",
+          title: 'Wearable Vibrotactile System',
+          description: "Multi-channel wearable haptic hardware and human experiment platform",
           section: "Projects",handler: () => {
               window.location.href = "/projects/proprioception/";
-            },},{id: "projects-tactile-roughness-estimation-with-the-digit-sensor",
-          title: 'Tactile Roughness Estimation with the DIGIT Sensor',
-          description: "A feasibility study on ordinal tactile representation learning",
+            },},{id: "projects-robust-tactile-roughness-perception",
+          title: 'Robust Tactile Roughness Perception',
+          description: "Learning and adaptation under sensor and interaction variability",
           section: "Projects",handler: () => {
               window.location.href = "/projects/roughness/";
             },},{
